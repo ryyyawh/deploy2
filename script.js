@@ -15,6 +15,8 @@ function showPage(id) {
 function copyCode(id) {
     const code = document.getElementById(id).innerText;
     navigator.clipboard.writeText(code).then(() => {
-        alert('Code copied!');
+        const btn = document.querySelector(`#${id} + .btn`);
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 1500);
     });
 }
