@@ -1,158 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HTML ZONE -->
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reeyztools - Ultimate Dev Tools</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reeyztools</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="diamonds"></div>
-    <header>
-        <button id="menu-btn">&#9776;</button>
-        <h1>Reeyztools</h1>
-    </header>
-    <nav id="sidebar">
-        <ul>
-            <li><a href="#" onclick="showPage('about')">About Me</a></li>
-            <li><a href="#" onclick="showPage('javascript')">JavaScript Tools</a></li>
-            <li><a href="#" onclick="showPage('python')">Python Tools</a></li>
-            <li><a href="#" onclick="showPage('golang')">Golang Tools</a></li>
-            <li><a href="#" onclick="showPage('cpp')">C++ Tools</a></li>
-            <li><a href="#" onclick="showPage('c')">C Tools</a></li>
-            <li><a href="#" onclick="showPage('html')">HTML Tools</a></li>
-        </ul>
+  <header>
+    <div class="menu-btn" onclick="toggleSidebar()">
+      <div></div><div></div><div></div>
+    </div>
+    <h1>Reeyztools</h1>
+  </header>  <aside id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#golang">Golang</a></li>
+        <li><a href="#cpp">C++</a></li>
+        <li><a href="#c">C</a></li>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Visit Contact</a></li>
+      </ul>
     </nav>
+  </aside>  <main>
+    <section id="javascript">
+      <h2>JavaScript Tools</h2>
+      <div class="tool-card">
+        <h3>Debounce Function</h3>
+        <p>Prevent a function from being called too frequently in rapid events like keystrokes.</p>
+        <pre><code id="js1">function debounce(func, delay) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => func.apply(this, args), delay);
+  };
+}</code></pre>
+        <button onclick="copyCode('js1')">Copy Code</button>
+      </div>
+    </section><section id="about">
+  <h2>About Me</h2>
+  <p>I'm Reeyz, creator of this ultimate dev tools hub.</p>
+</section>
 
-    <main>
-        <section id="about" class="page">
-            <h2>About Me</h2>
-            <p>Halo, saya Reeyz. Selamat datang di koleksi **ultimate tools** untuk semua developer dunia!</p>
-            <button class="btn" onclick="window.open('https://github.com/username', '_blank')">Visit GitHub</button>
-            <button class="btn" onclick="window.open('https://t.me/username', '_blank')">Contact via Telegram</button>
-        </section>
+<section id="contact">
+  <h2>Visit Contact</h2>
+  <a href="https://t.me/@conquerryy" target="_blank"><button>Contact via Telegram</button></a>
+  <a href="https://github.com/ryyyawh" target="_blank"><button>Visit Github</button></a>
+</section>
 
-        <section id="javascript" class="page hidden">
-            <h2>JavaScript Tools</h2>
-            <div class="tool">
-                <pre id="js1">npm install -g live-server</pre>
-                <button class="btn" onclick="copyCode('js1')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="js2">console.table(data);</pre>
-                <button class="btn" onclick="copyCode('js2')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="js3">fetch('https://api.example.com').then(res => res.json()).then(data => console.log(data));</pre>
-                <button class="btn" onclick="copyCode('js3')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="js4">document.addEventListener('DOMContentLoaded', () => {...});</pre>
-                <button class="btn" onclick="copyCode('js4')">Copy</button>
-            </div>
-        </section>
+  </main><canvas id="diamondCanvas"></canvas>
 
-        <section id="python" class="page hidden">
-            <h2>Python Tools</h2>
-            <div class="tool">
-                <pre id="py1">pip install requests</pre>
-                <button class="btn" onclick="copyCode('py1')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="py2">import requests\nresponse = requests.get('https://api.example.com')\nprint(response.json())</pre>
-                <button class="btn" onclick="copyCode('py2')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="py3">from datetime import datetime\nprint(datetime.now())</pre>
-                <button class="btn" onclick="copyCode('py3')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="py4">import os\nprint(os.getcwd())</pre>
-                <button class="btn" onclick="copyCode('py4')">Copy</button>
-            </div>
-        </section>
-
-        <section id="golang" class="page hidden">
-            <h2>Golang Tools</h2>
-            <div class="tool">
-                <pre id="go1">go get github.com/gin-gonic/gin</pre>
-                <button class="btn" onclick="copyCode('go1')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="go2">fmt.Printf("%+v\\n", data)</pre>
-                <button class="btn" onclick="copyCode('go2')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="go3">http.ListenAndServe(":8080", nil)</pre>
-                <button class="btn" onclick="copyCode('go3')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="go4">os.Getenv("PATH")</pre>
-                <button class="btn" onclick="copyCode('go4')">Copy</button>
-            </div>
-        </section>
-
-        <section id="cpp" class="page hidden">
-            <h2>C++ Tools</h2>
-            <div class="tool">
-                <pre id="cpp1">#include &lt;filesystem&gt;\nstd::filesystem::create_directory("new_dir");</pre>
-                <button class="btn" onclick="copyCode('cpp1')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="cpp2">std::vector&lt;int&gt; v = {1,2,3}; for(auto x:v) std::cout &lt;&lt; x;</pre>
-                <button class="btn" onclick="copyCode('cpp2')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="cpp3">std::ifstream file("data.txt"); std::string line; while(std::getline(file,line)) { ... }</pre>
-                <button class="btn" onclick="copyCode('cpp3')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="cpp4">std::cout &lt;&lt; std::chrono::system_clock::now().time_since_epoch().count();</pre>
-                <button class="btn" onclick="copyCode('cpp4')">Copy</button>
-            </div>
-        </section>
-
-        <section id="c" class="page hidden">
-            <h2>C Tools</h2>
-            <div class="tool">
-                <pre id="c1">system("mkdir new_dir");</pre>
-                <button class="btn" onclick="copyCode('c1')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="c2">FILE *f = fopen("data.txt","r"); char buf[100]; while(fgets(buf,100,f)) { printf("%s",buf); }</pre>
-                <button class="btn" onclick="copyCode('c2')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="c3">printf("Current time: %ld", time(NULL));</pre>
-                <button class="btn" onclick="copyCode('c3')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="c4">char *path = getenv("PATH"); printf("%s", path);</pre>
-                <button class="btn" onclick="copyCode('c4')">Copy</button>
-            </div>
-        </section>
-
-        <section id="html" class="page hidden">
-            <h2>HTML Tools</h2>
-            <div class="tool">
-                <pre id="html1">&lt;link rel="stylesheet" href="style.css"&gt;</pre>
-                <button class="btn" onclick="copyCode('html1')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="html2">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
-                <button class="btn" onclick="copyCode('html2')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="html3">&lt;script src="script.js"&gt;&lt;/script&gt;</pre>
-                <button class="btn" onclick="copyCode('html3')">Copy</button>
-            </div>
-            <div class="tool">
-                <pre id="html4">&lt;div id="app"&gt;&lt;/div&gt;</pre>
-                <button class="btn" onclick="copyCode('html4')">Copy</button>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
-</body>
+  <script src="script.js"></script>
+  </body>
 </html>
