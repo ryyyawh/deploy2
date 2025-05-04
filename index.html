@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reeyztools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button id="menu-btn">&#9776;</button>
+        <h1>Reeyztools</h1>
+    </header>
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#" onclick="showPage('about')">About Me</a></li>
+            <li><a href="#" onclick="showPage('javascript')">JavaScript Tools</a></li>
+            <li><a href="#" onclick="showPage('python')">Python Tools</a></li>
+            <li><a href="#" onclick="showPage('golang')">Golang Tools</a></li>
+            <li><a href="#" onclick="showPage('cpp')">C++ Tools</a></li>
+            <li><a href="#" onclick="showPage('c')">C Tools</a></li>
+            <li><a href="#" onclick="showPage('html')">HTML Tools</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="page">
+            <h2>About Me</h2>
+            <p>Halo, saya Reeyz. Ini adalah koleksi tools favorit saya.</p>
+            <button onclick="window.open('https://github.com/username', '_blank')">Visit GitHub</button>
+            <button onclick="window.open('https://t.me/username', '_blank')">Contact via Telegram</button>
+        </section>
+
+        <section id="javascript" class="page hidden">
+            <h2>JavaScript Tools</h2>
+            <div class="tool">
+                <pre id="js1">console.log('Hello World');</pre>
+                <button onclick="copyCode('js1')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="js2">let sum = (a, b) => a + b;</pre>
+                <button onclick="copyCode('js2')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="js3">document.querySelector('button').onclick = () => alert('Clicked!');</pre>
+                <button onclick="copyCode('js3')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="js4">for (let i = 0; i < 5; i++) console.log(i);</pre>
+                <button onclick="copyCode('js4')">Copy</button>
+            </div>
+        </section>
+
+        <section id="python" class="page hidden">
+            <h2>Python Tools</h2>
+            <div class="tool">
+                <pre id="py1">print("Hello World")</pre>
+                <button onclick="copyCode('py1')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="py2">sum = lambda a, b: a + b</pre>
+                <button onclick="copyCode('py2')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="py3">for i in range(5): print(i)</pre>
+                <button onclick="copyCode('py3')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="py4">import math\nprint(math.sqrt(16))</pre>
+                <button onclick="copyCode('py4')">Copy</button>
+            </div>
+        </section>
+
+        <section id="golang" class="page hidden">
+            <h2>Golang Tools</h2>
+            <div class="tool">
+                <pre id="go1">package main\nimport "fmt"\nfunc main() { fmt.Println("Hello World") }</pre>
+                <button onclick="copyCode('go1')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="go2">sum := func(a, b int) int { return a + b }</pre>
+                <button onclick="copyCode('go2')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="go3">for i := 0; i < 5; i++ { fmt.Println(i) }</pre>
+                <button onclick="copyCode('go3')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="go4">fmt.Println(len("hello"))</pre>
+                <button onclick="copyCode('go4')">Copy</button>
+            </div>
+        </section>
+
+        <section id="cpp" class="page hidden">
+            <h2>C++ Tools</h2>
+            <div class="tool">
+                <pre id="cpp1">#include &lt;iostream&gt;\nint main() { std::cout << "Hello World"; return 0; }</pre>
+                <button onclick="copyCode('cpp1')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="cpp2">int sum(int a, int b) { return a + b; }</pre>
+                <button onclick="copyCode('cpp2')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="cpp3">for (int i = 0; i < 5; i++) std::cout << i << std::endl;</pre>
+                <button onclick="copyCode('cpp3')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="cpp4">std::cout << strlen("hello");</pre>
+                <button onclick="copyCode('cpp4')">Copy</button>
+            </div>
+        </section>
+
+        <section id="c" class="page hidden">
+            <h2>C Tools</h2>
+            <div class="tool">
+                <pre id="c1">#include &lt;stdio.h&gt;\nint main() { printf("Hello World"); return 0; }</pre>
+                <button onclick="copyCode('c1')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="c2">int sum(int a, int b) { return a + b; }</pre>
+                <button onclick="copyCode('c2')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="c3">for (int i = 0; i < 5; i++) printf("%d\\n", i);</pre>
+                <button onclick="copyCode('c3')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="c4">printf("%lu", strlen("hello"));</pre>
+                <button onclick="copyCode('c4')">Copy</button>
+            </div>
+        </section>
+
+        <section id="html" class="page hidden">
+            <h2>HTML Tools</h2>
+            <div class="tool">
+                <pre id="html1">&lt;h1&gt;Hello World&lt;/h1&gt;</pre>
+                <button onclick="copyCode('html1')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="html2">&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</pre>
+                <button onclick="copyCode('html2')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="html3">&lt;button onclick="alert('Clicked!')"&gt;Click Me&lt;/button&gt;</pre>
+                <button onclick="copyCode('html3')">Copy</button>
+            </div>
+            <div class="tool">
+                <pre id="html4">&lt;input type="text" placeholder="Your name"&gt;</pre>
+                <button onclick="copyCode('html4')">Copy</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
