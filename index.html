@@ -1,146 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Why Me?? - Reyy Developer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why Me?? - Reyy Developer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="loader">
-    <div class="blob"></div>
-    <div class="blob"></div>
-    <div class="blob"></div>
+<div id="loader">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+<canvas id="particles"></canvas>
+
+<div class="container" role="main">
+  <header>
+    <img src="https://ar-hosting.pages.dev/1746771716639.jpg" alt="Profile Picture" loading="lazy" />
+    <h1>Reyy Developer★</h1>
+    <p>Frontend & Backend Developer | Problem Solver | Tech Enthusiast</p>
+  </header>
+
+  <div class="controls">
+    <button id="themeToggle" aria-label="Toggle theme">☀</button>
+    <button id="particlesToggle" aria-label="Toggle particles">✦</button>
+    <button id="mussicToggle" aria-label="Toggle music">▶ Play Cincin</button>
+    <button id="mussicToggle2" aria-label="Toggle music2">▶ Play Mata Air</button>
+    <button id="mussicToggle3" aria-label="Toggle music3">▶ Play Evaluasi</button>
   </div>
 
-  <canvas id="particles"></canvas>
-
-  <div class="container">
-    <header>
-      <img src="https://ar-hosting.pages.dev/1746771716639.jpg" alt="Profile Picture" />
-      <h1>Reyy Developer★</h1>
-      <p>Frontend & Backend Developer | Problem Solver | Tech Enthusiast</p>
-    </header>
-
-    <div class="controls">
-      <button id="themeToggle">☀</button>
-      <button id="particlesToggle">✦</button>
-      <button id="musicToggle1">▶ Play Cincin</button>
-      <button id="musicToggle2">▶ Play Mata Air</button>
-      <button id="musicToggle3">▶ Play Evaluasi</button>
-    </div>
-
-    <div id="nowPlayingCard" style="display: none;">
-      <div class="cassette-spin"></div>
-      <div class="song-info">
-        <img id="songImage" src="https://ar-hosting.pages.dev/1746706133549.jpg" alt="Song Image">
-        <div>
-          <h3 id="songTitle">Cincin</h3>
-          <p id="songArtist">Hindia</p>
-        </div>
+  <div id="nowPlayingCard" style="display: none;">
+    <div class="song-info">
+      <img id="songImage" src="https://ar-hosting.pages.dev/1746706133549.jpg" alt="Song Image">
+      <div>
+        <h3 id="songTitle">Cincin</h3>
+        <p id="songArtist">Hindia</p>
       </div>
     </div>
+  </div>
 
-    <section id="education">
-      <h2>My Regions</h2>
-      <article>
-        <h3>Sumatra</h3>
-        <p>in Sumatra Selatan — Specifically I live in Palembang.</p>
+  <section id="education">
+    <h2>My Regions</h2>
+    <div class="timeline">
+      <article class="timeline-item">
+        <div class="school-name">Sumatra</div>
+        <time class="school-period">in Sumatra Selatan</time>
+        <p class="school-desc">Specifically I live in Palembang.</p>
       </article>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>My Skills</h2>
-      <p>Click a skill to see the description:</p>
-      <div class="skills">
-        <button class="skill" onclick="showSkill('html')"><i class="fab fa-html5"></i> HTML</button>
-        <button class="skill" onclick="showSkill('css')"><i class="fab fa-css3-alt"></i> CSS</button>
-        <button class="skill" onclick="showSkill('js')"><i class="fab fa-js"></i> JavaScript</button>
-        <button class="skill" onclick="showSkill('node')"><i class="fab fa-node-js"></i> NodeJS</button>
-        <button class="skill" onclick="showSkill('python')"><i class="fab fa-python"></i> Python</button>
-        <button class="skill" onclick="showSkill('cpp')"><i class="fas fa-code"></i> C++</button>
-        <button class="skill" onclick="showSkill('csharp')"><i class="fas fa-code"></i> C#</button>
-        <button class="skill" onclick="showSkill('react')"><i class="fab fa-react"></i> React</button>
-        <button class="skill" onclick="showSkill('vue')"><i class="fab fa-vuejs"></i> Vue.js</button>
-        <button class="skill" onclick="showSkill('angular')"><i class="fab fa-angular"></i> Angular</button>
-        <button class="skill" onclick="showSkill('ts')"><i class="fas fa-code"></i> TypeScript</button>
-        <button class="skill" onclick="showSkill('tailwind')"><i class="fas fa-wind"></i> Tailwind CSS</button>
-        <button class="skill" onclick="showSkill('docker')"><i class="fab fa-docker"></i> Docker</button>
-        <button class="skill" onclick="showSkill('k8s')"><i class="fas fa-network-wired"></i> Kubernetes</button>
-        <button class="skill" onclick="showSkill('aws')"><i class="fab fa-aws"></i> AWS</button>
-      </div>
-
-      <div id="default" class="skill-description active">
-        <h3>Select a Skill</h3>
-        <p>Click on any skill button above to see its details.</p>
-      </div>
-
-      <!-- Skill descriptions -->
-      <div id="html-skill" class="skill-description"><h3>HTML</h3><p>Markup language for structuring web pages.</p></div>
-      <div id="css-skill" class="skill-description"><h3>CSS</h3><p>Styling and designing beautiful responsive websites.</p></div>
-      <div id="js-skill" class="skill-description"><h3>JavaScript</h3><p>Programming the interactive behavior of web pages.</p></div>
-      <div id="node-skill" class="skill-description"><h3>NodeJS</h3><p>Backend development using JavaScript runtime.</p></div>
-      <div id="python-skill" class="skill-description"><h3>Python</h3><p>Versatile language for web, data, and automation.</p></div>
-      <div id="cpp-skill" class="skill-description"><h3>C++</h3><p>High-performance language for systems and games.</p></div>
-      <div id="csharp-skill" class="skill-description"><h3>C#</h3><p>Microsoft's language for desktop, web, and Unity games.</p></div>
-      <div id="react-skill" class="skill-description"><h3>React</h3><p>Modern JavaScript library for building UIs.</p></div>
-      <div id="vue-skill" class="skill-description"><h3>Vue.js</h3><p>Progressive framework for building user interfaces.</p></div>
-      <div id="angular-skill" class="skill-description"><h3>Angular</h3><p>Robust framework for scalable web apps.</p></div>
-      <div id="ts-skill" class="skill-description"><h3>TypeScript</h3><p>JavaScript with static typing for large projects.</p></div>
-      <div id="tailwind-skill" class="skill-description"><h3>Tailwind CSS</h3><p>Utility-first CSS framework for fast UI building.</p></div>
-      <div id="docker-skill" class="skill-description"><h3>Docker</h3><p>Containerization tool for consistent environments.</p></div>
-      <div id="k8s-skill" class="skill-description"><h3>Kubernetes</h3><p>Container orchestration for scalable applications.</p></div>
-      <div id="aws-skill" class="skill-description"><h3>AWS</h3><p>Cloud services platform for deploying applications.</p></div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>Portfolio Website - My personal site showcasing my skills.</li>
-        <li>Malware Simple - Educational purpose encrypting tools.</li>
-        <li>Project Tools DDoS - Tools for sending test packets.</li>
-        <li>Baileys Library NodeJS - WebSockets library for WhatsApp.</li>
-        <li>Mini OS - Mini operating system for tools.</li>
-        <li>Script Bot WhatsApp Xploit - Attack script for WhatsApp.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Contact Me</h2>
-      <p><a href="https://t.me/conquerryy" target="_blank">Chat Me</a></p>
-      <p><a href="https://github.com/ryyyawh" target="_blank">Visit My GitHub</a></p>
-      <p><a href="https://wa.me/6288287577173" target="_blank">Say Hello To Me</a></p>
-    </section>
-
-    <section>
-      <h2>THANKS TO FRIEND</h2>
-      <ul>
-        <li>Langit</li>
-        <li>Daffa</li>
-        <li>Renxiter</li>
-        <li>Drayy</li>
-        <li>Depay</li>
-        <li>Kiuu</li>
-        <li>Rapli</li>
-      </ul>
-    </section>
+  <section>
+    <h2>My Skills</h2>
+    <p style="text-align: center;">Click a skill to see the description:</p>
+<section class="skills">
+  <div class="skills-buttons">
+    <button class="skill" onclick="showSkill('html')"><i class="fab fa-html5"></i> HTML</button>
+    <button class="skill" onclick="showSkill('css')"><i class="fab fa-css3-alt"></i> CSS</button>
+    <button class="skill" onclick="showSkill('js')"><i class="fab fa-js"></i> JavaScript</button>
+    <button class="skill" onclick="showSkill('node')"><i class="fab fa-node-js"></i> NodeJS</button>
+    <button class="skill" onclick="showSkill('python')"><i class="fab fa-python"></i> Python</button>
+    <button class="skill" onclick="showSkill('cpp')"><i class="fas fa-code"></i> C++</button>
+    <button class="skill" onclick="showSkill('csharp')"><i class="fas fa-code"></i> C#</button>
+    <button class="skill" onclick="showSkill('react')"><i class="fab fa-react"></i> React</button>
+    <button class="skill" onclick="showSkill('vue')"><i class="fab fa-vuejs"></i> Vue.js</button>
+    <button class="skill" onclick="showSkill('angular')"><i class="fab fa-angular"></i> Angular</button>
+    <button class="skill" onclick="showSkill('ts')"><i class="fas fa-code"></i> TypeScript</button>
+    <button class="skill" onclick="showSkill('tailwind')"><i class="fas fa-wind"></i> Tailwind CSS</button>
+    <button class="skill" onclick="showSkill('docker')"><i class="fab fa-docker"></i> Docker</button>
+    <button class="skill" onclick="showSkill('k8s')"><i class="fas fa-network-wired"></i> Kubernetes</button>
+    <button class="skill" onclick="showSkill('aws')"><i class="fab fa-aws"></i> AWS</button>
   </div>
 
-  <audio id="backgroundMusic1" loop>
-    <source src="https://ar-hosting.pages.dev/1746704494177.mp3" type="audio/mpeg">
-  </audio>
-  <audio id="backgroundMusic2" loop>
-    <source src="https://ar-hosting.pages.dev/1746767230846.mp3" type="audio/mpeg">
-  </audio>
-  <audio id="backgroundMusic3" loop>
-    <source src="https://ar-hosting.pages.dev/1746767220966.mp3" type="audio/mpeg">
-  </audio>
+  <div class="skills-descriptions">
+    <div id="html-skill" class="skill-description"><h3><i class="fab fa-html5"></i> HTML</h3><p>Markup language for structuring web pages.</p></div>
+    <div id="css-skill" class="skill-description"><h3><i class="fab fa-css3-alt"></i> CSS</h3><p>Styling and designing beautiful responsive websites.</p></div>
+    <div id="js-skill" class="skill-description"><h3><i class="fab fa-js"></i> JavaScript</h3><p>Programming the interactive behavior of web pages.</p></div>
+    <div id="node-skill" class="skill-description"><h3><i class="fab fa-node-js"></i> NodeJS</h3><p>Backend development using JavaScript runtime.</p></div>
+    <div id="python-skill" class="skill-description"><h3><i class="fab fa-python"></i> Python</h3><p>Versatile language for web, data, and automation.</p></div>
+    <div id="cpp-skill" class="skill-description"><h3><i class="fas fa-code"></i> C++</h3><p>High-performance language for systems and games.</p></div>
+    <div id="csharp-skill" class="skill-description"><h3><i class="fas fa-code"></i> C#</h3><p>Microsoft's language for desktop, web, and Unity games.</p></div>
+    <div id="react-skill" class="skill-description"><h3><i class="fab fa-react"></i> React</h3><p>Modern JavaScript library for building UIs.</p></div>
+    <div id="vue-skill" class="skill-description"><h3><i class="fab fa-vuejs"></i> Vue.js</h3><p>Progressive framework for building user interfaces.</p></div>
+    <div id="angular-skill" class="skill-description"><h3><i class="fab fa-angular"></i> Angular</h3><p>Robust framework for scalable web apps.</p></div>
+    <div id="ts-skill" class="skill-description"><h3><i class="fas fa-code"></i> TypeScript</h3><p>JavaScript with static typing for large projects.</p></div>
+    <div id="tailwind-skill" class="skill-description"><h3><i class="fas fa-wind"></i> Tailwind CSS</h3><p>Utility-first CSS framework for fast UI building.</p></div>
+    <div id="docker-skill" class="skill-description"><h3><i class="fab fa-docker"></i> Docker</h3><p>Containerization tool for consistent environments.</p></div>
+    <div id="k8s-skill" class="skill-description"><h3><i class="fas fa-network-wired"></i> Kubernetes</h3><p>Container orchestration for scalable applications.</p></div>
+    <div id="aws-skill" class="skill-description"><h3><i class="fab fa-aws"></i> AWS</h3><p>Cloud services platform for deploying applications.</p></div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Reyy Developer. All rights reserved.
-  </footer>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card"><h3>Portfolio Website</h3><p>My personal site showcasing my skills, projects, and contact info.</p></article>
+      <article class="project-card"><h3>Malware Simple</h3><p>Personal website malware for encrypting user databases (educational purpose).</p></article>
+      <article class="project-card"><h3>Project Tools DDoS</h3><p>My tools for sending DDoS packets to websites (for testing only).</p></article>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+        <section class="section" style="text-align: center; color: white;">
+           <h2 class="section-title"><i class="fas fa-phone"></i>Contact Me</h2> 
+              
+                 <div class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <h3 class="contact-title">GitHub</h3>
+                    <a href="Ryyyawh" class="contact-link">Visit My Github</a>
+                </div>
+                
+            <div class="contact-options">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <a href="https://wa.me/6288287577173" class="contact-link">Say Hello Pls!</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-telegram"></i></div>
+                    <h3 class="contact-title">Telegram</h3>
+                    <a href="https://t.me/conquerryy" class="contact-link">My Telegram</a>
+                </div>
+            </div>
+        </section>
+
+<audio id="backgroundMusic" loop><source src="https://ar-hosting.pages.dev/1746704494177.mp3" type="audio/mpeg"></audio>
+<audio id="backgroundMusic2" loop><source src="https://ar-hosting.pages.dev/1746767230846.mp3" type="audio/mpeg"></audio>
+<audio id="backgroundMusic3" loop><source src="https://ar-hosting.pages.dev/1746767220966.mp3" type="audio/mpeg"></audio>
+
+<script src="script.js"></script>
 </body>
 </html>
