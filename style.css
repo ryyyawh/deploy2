@@ -48,7 +48,6 @@ body.light-mode {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.7);
     padding: 2rem 3rem 3rem;
-    position: relative;
     z-index: 1;
 }
 body.light-mode .container {
@@ -217,8 +216,8 @@ body.light-mode #nowPlayingCard {
     padding: 20px;
     background-color: var(--dark);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-left: 3px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .section:hover {
     border-left-color: var(--primary);
@@ -261,16 +260,14 @@ body.light-mode #nowPlayingCard {
     transform: translateY(-5px);
     box-shadow: 0 0 12px var(--primary);
 }
-body.light-mode .project-card, body.light-mode .timeline-item, body.light-mode .friend-card {
+body.light-mode .project-card,
+body.light-mode .timeline-item,
+body.light-mode .friend-card {
     background: var(--light);
     box-shadow: 0 0 8px var(--primary-dark);
 }
 
 /* Animations */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -302,14 +299,10 @@ body.light-mode .project-card, body.light-mode .timeline-item, body.light-mode .
     height: 30px;
     background: var(--primary);
     border-radius: 50%;
-    animation: blob-bounce 1.5s infinite ease-in-out alternate;
+    animation: blob-bounce 1.5s infinite alternate ease-in-out;
 }
-.blob:nth-child(2) {
-    animation-delay: 0.3s;
-}
-.blob:nth-child(3) {
-    animation-delay: 0.6s;
-}
+.blob:nth-child(2) { animation-delay: 0.3s; }
+.blob:nth-child(3) { animation-delay: 0.6s; }
 
 /* Canvas Particles */
 canvas#particles {
@@ -321,10 +314,7 @@ canvas#particles {
 }
 
 /* Album Rotation */
-#songImage {
-    transition: transform 0.3s ease;
-}
-.rotate {
+#songImage.rotate {
     animation: rotateAlbum 4s linear infinite;
 }
 
