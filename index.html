@@ -1,58 +1,104 @@
-<!-- HTML ZONE -->
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reeyztools</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why Me?? - Reyy Developer</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="menu-btn" onclick="toggleSidebar()">
-      <div></div><div></div><div></div>
+  <div id="loader">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+
+  <canvas id="particles"></canvas>
+
+  <div class="container" role="main">
+    <header>
+      <img src="https://ar-hosting.pages.dev/1746771716639.jpg" alt="Profile Picture" loading="lazy" />
+      <h1>Reyy Developer★</h1>
+      <p>Frontend & Backend Developer | Problem Solver | Tech Enthusiast</p>
+    </header>
+
+    <div class="controls">
+      <button id="themeToggle" aria-label="Toggle theme">☀</button>
+      <button id="particlesToggle" aria-label="Toggle particles">✦</button>
+      <button id="mussicToggle" aria-label="Toggle music">▶ Play Cincin</button>
+      <button id="mussicToggle2" aria-label="Toggle music2">▶ Play Mata Air</button>
+      <button id="mussicToggle3" aria-label="Toggle music3">▶ Play Evaluasi</button>
     </div>
-    <h1>Reeyztools</h1>
-  </header>  <aside id="sidebar">
-    <nav>
-      <ul>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#python">Python</a></li>
-        <li><a href="#golang">Golang</a></li>
-        <li><a href="#cpp">C++</a></li>
-        <li><a href="#c">C</a></li>
-        <li><a href="#html">HTML</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#contact">Visit Contact</a></li>
-      </ul>
-    </nav>
-  </aside>  <main>
-    <section id="javascript">
-      <h2>JavaScript Tools</h2>
-      <div class="tool-card">
-        <h3>Debounce Function</h3>
-        <p>Prevent a function from being called too frequently in rapid events like keystrokes.</p>
-        <pre><code id="js1">function debounce(func, delay) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => func.apply(this, args), delay);
-  };
-}</code></pre>
-        <button onclick="copyCode('js1')">Copy Code</button>
+
+    <div id="nowPlayingCard" style="display: none;">
+      <div class="cassette-spin"></div>
+      <div class="song-info">
+        <img id="songImage" src="https://ar-hosting.pages.dev/1746772709192.jpg" alt="Song Image">
+        <div>
+          <h3 id="songTitle">Cincin</h3>
+          <p id="songArtist">Hindia</p>
+        </div>
       </div>
-    </section><section id="about">
-  <h2>About Me</h2>
-  <p>I'm Reeyz, creator of this ultimate dev tools hub.</p>
-</section>
+    </div>
 
-<section id="contact">
-  <h2>Visit Contact</h2>
-  <a href="https://t.me/@conquerryy" target="_blank"><button>Contact via Telegram</button></a>
-  <a href="https://github.com/ryyyawh" target="_blank"><button>Visit Github</button></a>
-</section>
+    <section id="education">
+      <h2>My Regions</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="school-name">Sumatra</div>
+          <time class="school-period">in Sumatra Selatan</time>
+          <p class="school-desc">Specifically I live in Palembang.</p>
+        </article>
+      </div>
+    </section>
 
-  </main><canvas id="diamondCanvas"></canvas>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card"><h3>Portfolio Website</h3><p>My personal site showcasing my skills, projects, and contact info.</p></article>
+        <article class="project-card"><h3>Malware Simple</h3><p>Personal website malware for encrypting user databases (educational purpose).</p></article>
+        <article class="project-card"><h3>Project Tools DDoS</h3><p>My tools for sending DDoS packets to websites (for testing only).</p></article>
+        <article class="project-card"><h3>Baileys Library NodeJS</h3><p>WebSockets library for WhatsApp using NodeJS.</p></article>
+        <article class="project-card"><h3>Mini OS</h3><p>Mini operating system for tool use.</p></article>
+        <article class="project-card"><h3>Script Bot WhatsApp Xploit Zedezada</h3><p>Script attack for WhatsApp.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <p>If you want to collaborate or just visit my projects and say hello, feel free to reach out!</p>
+      <a href="https://t.me/conquerryy" target="_blank" rel="noopener">Chat Me</a>
+      <a href="https://github.com/ryyyawh" target="_blank" rel="noopener">Visit My GitHub</a>
+      <a href="https://wa.me/6288287577173" target="_blank" rel="noopener">Say Hello To Me</a>
+    </section>
+
+    <section id="friend">
+      <h2>THANKS TO FRIEND</h2>
+      <div class="friend-grid">
+        <article class="friend-card"><h3>Langit</h3><p>My broo</p></article>
+        <article class="friend-card"><h3>Daffa</h3><p>My broo</p></article>
+        <article class="friend-card"><h3>Renxiter</h3><p>My broo</p></article>
+        <article class="friend-card"><h3>Drayy</h3><p>My broo</p></article>
+        <article class="friend-card"><h3>Depay</h3><p>My broo</p></article>
+        <article class="friend-card"><h3>Kiuu</h3><p>My broo</p></article>
+        <article class="friend-card"><h3>Rapli</h3><p>My broo</p></article>
+      </div>
+    </section>
+  </div>
+
+  <audio id="backgroundMusic" loop>
+    <source src="https://ar-hosting.pages.dev/1746704494177.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="backgroundMusic2" loop>
+    <source src="https://ar-hosting.pages.dev/1746767230846.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="backgroundMusic3" loop>
+    <source src="https://ar-hosting.pages.dev/1746767220966.mp3" type="audio/mpeg">
+  </audio>
 
   <script src="script.js"></script>
-  </body>
+</body>
 </html>
