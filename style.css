@@ -183,6 +183,16 @@ body.light-mode .skill-description.active {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotating {
+  animation: spin 4s linear infinite;
+}
+
   section h2 {
     font-weight: 600;
     font-size: 1.8rem;

@@ -1,15 +1,15 @@
 function showSkill(skillId) {
-      const allDescriptions = document.querySelectorAll('.skill-description');
-      allDescriptions.forEach(desc => desc.classList.remove('active'));
+  const allDescriptions = document.querySelectorAll('.skill-description');
+  allDescriptions.forEach(desc => desc.classList.remove('active'));
 
-      const target = document.getElementById(`${skillId}-skill`);
-      if (target) {
-        target.classList.add('active');
-      } else {
-        document.getElementById('default-skill').classList.add('active');
-      }
-    }
-    
+  const target = document.getElementById(`${skillId}-skill`);
+  if (target) {
+    target.classList.add('active');
+  } else {
+    document.getElementById('default-skill').classList.add('active');
+  }
+}
+
 const themeBtn = document.getElementById('themeToggle');
 const particlesBtn = document.getElementById('particlesToggle');
 const musicBtn1 = document.getElementById('mussicToggle');
@@ -32,18 +32,6 @@ let particlesEnabled = true;
 if (localStorage.getItem('theme') === 'light') {
   body.classList.add('light-mode');
 }
-function updateNowPlaying(title, artist, image) {
-  songTitle.textContent = title;
-  songArtist.textContent = artist;
-  songImage.src = image;
-  nowPlayingCard.style.display = 'flex';
-
-  // force restart animation
-  songImage.classList.remove('rotate');
-  void songImage.offsetWidth;  // trigger reflow
-  songImage.classList.add('rotate');
-}
-
 
 // Theme toggle
 themeBtn.addEventListener('click', () => {
@@ -51,7 +39,20 @@ themeBtn.addEventListener('click', () => {
   localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
 });
 
-// Music control functions
+// Update now playing + apply rotating animation
+function updateNowPlaying(title, artist, image) {
+  songTitle.textContent = title;
+  songArtist.textContent = artist;
+  songImage.src = image;
+  nowPlayingCard.style.display = 'flex';
+
+  // Restart rotate animation
+  songImage.classList.remove('rotating');
+  void songImage.offsetWidth;  // trigger reflow
+  songImage.classList.add('rotating');
+}
+
+// Stop all music and stop image rotation
 function stopAllMusic() {
   music1.pause();
   music2.pause();
@@ -59,8 +60,12 @@ function stopAllMusic() {
   musicBtn1.textContent = '▶ Play Cincin';
   musicBtn2.textContent = '▶ Play Mata Air';
   musicBtn3.textContent = '▶ Play Evaluasi';
+
+  // Stop rotating image
+  songImage.classList.remove('rotating');
 }
 
+// Music control
 musicBtn1.addEventListener('click', () => {
   if (music1.paused) {
     stopAllMusic();
@@ -71,6 +76,7 @@ musicBtn1.addEventListener('click', () => {
     music1.pause();
     musicBtn1.textContent = '▶ Play Cincin';
     nowPlayingCard.style.display = 'none';
+    songImage.classList.remove('rotating');
   }
 });
 
@@ -84,6 +90,7 @@ musicBtn2.addEventListener('click', () => {
     music2.pause();
     musicBtn2.textContent = '▶ Play Mata Air';
     nowPlayingCard.style.display = 'none';
+    songImage.classList.remove('rotating');
   }
 });
 
@@ -97,15 +104,9 @@ musicBtn3.addEventListener('click', () => {
     music3.pause();
     musicBtn3.textContent = '▶ Play Evaluasi';
     nowPlayingCard.style.display = 'none';
+    songImage.classList.remove('rotating');
   }
 });
-
-function updateNowPlaying(title, artist, image) {
-  songTitle.textContent = title;
-  songArtist.textContent = artist;
-  songImage.src = image;
-  nowPlayingCard.style.display = 'flex';
-}
 
 // Particles canvas
 const canvas = document.getElementById('particles');
