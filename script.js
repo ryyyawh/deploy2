@@ -1,3 +1,15 @@
+      function showSkill(skillId) {
+      const allDescriptions = document.querySelectorAll('.skill-description');
+      allDescriptions.forEach(desc => desc.classList.remove('active'));
+
+      const target = document.getElementById(`${skillId}-skill`);
+      if (target) {
+        target.classList.add('active');
+      } else {
+        document.getElementById('default-skill').classList.add('active');
+      }
+      }
+
 document.addEventListener('DOMContentLoaded', () => {
   const themeBtn = document.getElementById('themeToggle');
   const particlesBtn = document.getElementById('particlesToggle');
