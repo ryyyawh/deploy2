@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.getElementById('loader');
+  loader.style.opacity = '0';
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 500);
+});
 function showSkill(skillId) {
   const allDescriptions = document.querySelectorAll('.skill-description');
   allDescriptions.forEach(desc => desc.classList.remove('active'));
