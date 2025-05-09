@@ -92,6 +92,36 @@ header p {
   box-shadow: 0 0 12px #00adb5ff;
   animation: fadeIn 0.5s ease;
 }
+    .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .skill {
+    background-color: #00adb5;
+    color: #121212;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .skill:hover {
+    background-color: #00888f;
+  }
+  .skill-description {
+    display: none;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #292929;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .skill-description.active {
+    display: block;
+  }
 body.light-mode #nowPlayingCard {
   background: #f8f8f8;
   box-shadow: 0 0 12px #007b83ff;
