@@ -1,141 +1,144 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const themeToggle = document.getElementById('themeToggle');
-  const particlesToggle = document.getElementById('particlesToggle');
-  const mussicToggle = document.getElementById('mussicToggle');
-  const mussicToggle2 = document.getElementById('mussicToggle2');
-  const mussicToggle3 = document.getElementById('mussicToggle3');
+document.addEventListener('DOMContentLoaded', () => {
+  const themeBtn = document.getElementById('themeToggle');
+  const particlesBtn = document.getElementById('particlesToggle');
+  const musicBtn1 = document.getElementById('mussicToggle');
+  const musicBtn2 = document.getElementById('mussicToggle2');
+  const musicBtn3 = document.getElementById('mussicToggle3');
+  const body = document.body;
 
-  const backgroundMusic = document.getElementById('backgroundMusic');
-  const backgroundMusic2 = document.getElementById('backgroundMusic2');
-  const backgroundMusic3 = document.getElementById('backgroundMusic3');
+  const music1 = document.getElementById('backgroundMusic');
+  const music2 = document.getElementById('backgroundMusic2');
+  const music3 = document.getElementById('backgroundMusic3');
 
   const nowPlayingCard = document.getElementById('nowPlayingCard');
   const songTitle = document.getElementById('songTitle');
   const songArtist = document.getElementById('songArtist');
   const songImage = document.getElementById('songImage');
 
-  let currentTheme = localStorage.getItem('theme') || 'light';
-  let particlesEnabled = JSON.parse(localStorage.getItem('particlesEnabled')) || false;
+  let particlesEnabled = true;
 
-  const updateTheme = () => {
-    document.body.classList.toggle('dark-theme', currentTheme === 'dark');
-    themeToggle.textContent = currentTheme === 'dark' ? '☾' : '☀';
-  };
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+  }
 
-  const updateParticles = () => {
-    const canvas = document.getElementById('particles');
-    canvas.style.display = particlesEnabled ? 'block' : 'none';
+  themeBtn.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+  });
+
+  function stopAllMusic() {
+    music1.pause();
+    music2.pause();
+    music3.pause();
+    musicBtn1.textContent = '▶ Play Cincin';
+    musicBtn2.textContent = '▶ Play Mata Air';
+    musicBtn3.textContent = '▶ Play Evaluasi';
+    songImage.classList.remove('rotate');
+  }
+
+  function updateNowPlaying(title, artist, image) {
+    songTitle.textContent = title;
+    songArtist.textContent = artist;
+    songImage.src = image;
+    nowPlayingCard.style.display = 'flex';
+    songImage.classList.add('rotate');
+  }
+
+  musicBtn1.addEventListener('click', () => {
+    if (music1.paused) {
+      stopAllMusic();
+      music1.play();
+      musicBtn1.textContent = '⏸';
+      updateNowPlaying('Cincin', 'Hindia', 'https://ar-hosting.pages.dev/1746706133549.jpg');
+    } else {
+      music1.pause();
+      musicBtn1.textContent = '▶ Play Cincin';
+      nowPlayingCard.style.display = 'none';
+      songImage.classList.remove('rotate');
+    }
+  });
+
+  musicBtn2.addEventListener('click', () => {
+    if (music2.paused) {
+      stopAllMusic();
+      music2.play();
+      musicBtn2.textContent = '⏸';
+      updateNowPlaying('Mata Air', 'Hindia', 'https://ar-hosting.pages.dev/1746706133549.jpg');
+    } else {
+      music2.pause();
+      musicBtn2.textContent = '▶ Play Mata Air';
+      nowPlayingCard.style.display = 'none';
+      songImage.classList.remove('rotate');
+    }
+  });
+
+  musicBtn3.addEventListener('click', () => {
+    if (music3.paused) {
+      stopAllMusic();
+      music3.play();
+      musicBtn3.textContent = '⏸';
+      updateNowPlaying('Evaluasi', 'Hindia', 'https://ar-hosting.pages.dev/1746706133549.jpg');
+    } else {
+      music3.pause();
+      musicBtn3.textContent = '▶ Play Evaluasi';
+      nowPlayingCard.style.display = 'none';
+      songImage.classList.remove('rotate');
+    }
+  });
+
+  // Particles canvas
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  window.addEventListener('resize', () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  });
+
+  const particlesArray = Array.from({ length: 100 }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    size: Math.random() * 3 + 1,
+    speedX: (Math.random() - 0.5) * 1.5,
+    speedY: (Math.random() - 0.5) * 1.5
+  }));
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, width, height);
     if (particlesEnabled) {
-      initParticles(canvas);
-    }
-  };
-
-  themeToggle.addEventListener('click', () => {
-    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-    localStorage.setItem('theme', currentTheme);
-    updateTheme();
-  });
-
-  particlesToggle.addEventListener('click', () => {
-    particlesEnabled = !particlesEnabled;
-    localStorage.setItem('particlesEnabled', JSON.stringify(particlesEnabled));
-    updateParticles();
-  });
-
-  const stopAllMusic = () => {
-    backgroundMusic.pause();
-    backgroundMusic2.pause();
-    backgroundMusic3.pause();
-    backgroundMusic.currentTime = 0;
-    backgroundMusic2.currentTime = 0;
-    backgroundMusic3.currentTime = 0;
-  };
-
-  mussicToggle.addEventListener('click', () => {
-    stopAllMusic();
-    backgroundMusic.play();
-    nowPlayingCard.style.display = 'block';
-    songTitle.textContent = 'Cincin';
-    songArtist.textContent = 'Hindia';
-    songImage.src = 'https://ar-hosting.pages.dev/1746772709192.jpg';
-  });
-
-  mussicToggle2.addEventListener('click', () => {
-    stopAllMusic();
-    backgroundMusic2.play();
-    nowPlayingCard.style.display = 'block';
-    songTitle.textContent = 'Mata Air';
-    songArtist.textContent = 'Hindia';
-    songImage.src = 'https://ar-hosting.pages.dev/1746772709192.jpg';
-  });
-
-  mussicToggle3.addEventListener('click', () => {
-    stopAllMusic();
-    backgroundMusic3.play();
-    nowPlayingCard.style.display = 'block';
-    songTitle.textContent = 'Evaluasi';
-    songArtist.textContent = 'Hindia';
-    songImage.src = 'https://ar-hosting.pages.dev/1746772709192.jpg';
-  });
-
-  const initParticles = (canvas) => {
-    const ctx = canvas.getContext('2d');
-    const particles = [];
-    const numParticles = 100;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        dx: Math.random() * 2 - 1,
-        dy: Math.random() * 2 - 1
-      });
-    }
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#fff';
-
-      particles.forEach(p => {
+      ctx.fillStyle = 'rgba(0, 173, 181, 0.7)';
+      particlesArray.forEach(p => {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > width) p.speedX = -p.speedX;
+        if (p.y < 0 || p.y > height) p.speedY = -p.speedY;
       });
+    }
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
 
-      update();
-    };
+  particlesBtn.addEventListener('click', () => {
+    particlesEnabled = !particlesEnabled;
+    particlesBtn.textContent = particlesEnabled ? '✦' : '✖';
+  });
 
-    const update = () => {
-      particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x + p.radius > canvas.width || p.x - p.radius < 0) {
-          p.dx *= -1;
-        }
-        if (p.y + p.radius > canvas.height || p.y - p.radius < 0) {
-          p.dy *= -1;
-        }
-      });
-    };
-
-    const animate = () => {
-      draw();
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-  };
-
-  updateTheme();
-  updateParticles();
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  });
 });
