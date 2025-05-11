@@ -18,7 +18,7 @@
 <div class="container" role="main">
   <header>
     <img src="https://ar-hosting.pages.dev/1746771716639.jpg" alt="Profile Picture" loading="lazy" />
-    <h1>Reyy Developer★</h1>
+    <h1><i class="fas fa-user-secret"></i> Reyy Developer</h1>
     <p>Frontend & Backend Developer | Problem Solver | Tech Enthusiast</p>
   </header>
 
@@ -42,23 +42,23 @@
   </div>
 
   <section id="education">
-    <h2>Intro</h2>
+    <h2>Intro ★</h2>
     <div class="timeline">
     <article class="timeline-item">
-        <h2>My Region</h2>
+        <h2><i class="fas fa-home"></i> My Region</h2>
         <time class="school-period">in Sumatra selatan</time>
         <p class="school-desc">"Spesificaly Im Live In Palembang.”</p>
       </article>
 
       <article class="timeline-item">
-        <h2>My Ambision</h2>
+        <h2><i class="fas fa-quote-left"></i> My Ambision</h2>
         <p class="school-desc">“I am deeply driven to master the world of coding, constantly pushing my limits to solve complex problems, build innovative solutions, and become a developer who creates meaningful impact in the tech industry.”</p>
       </article>
     </div>
   </section>
 
   <section>
-    <h2>My Skills</h2>
+    <h2><i class="fas fa-file"></i> Skills</h2>
     <p style="text-align: center;">Click a skill to see the description:</p>
 <div class="skills">
   <button class="skill" onclick="showSkill('html')"><i class="fab fa-html5"></i> HTML</button>
@@ -73,13 +73,23 @@
   <button class="skill" onclick="showSkill('angular')"><i class="fab fa-angular"></i> Angular</button>
   <button class="skill" onclick="showSkill('ts')"><i class="fas fa-code"></i> TypeScript</button>
   <button class="skill" onclick="showSkill('tailwind')"><i class="fas fa-wind"></i> Tailwind CSS</button>
+<button class="skill" onclick="showSkill('pentest')"><i class="fas fa-user-secret"></i> Penetration Testing</button>
+<button class="skill" onclick="showSkill('ethicalhacking')"><i class="fas fa-hat-wizard"></i> Ethical Hacking</button>
+<button class="skill" onclick="showSkill('networksec')"><i class="fas fa-shield-alt"></i> Network Security</button>
+<button class="skill" onclick="showSkill('infosec')"><i class="fas fa-lock"></i> Information Security</button>
+<button class="skill" onclick="showSkill('forensics')"><i class="fas fa-search"></i> Digital Forensics</button>
+<button class="skill" onclick="showSkill('malware')"><i class="fas fa-bug"></i> Malware Analysis</button>
+<button class="skill" onclick="showSkill('siem')"><i class="fas fa-eye"></i> SIEM</button>
+<button class="skill" onclick="showSkill('soc')"><i class="fas fa-building-shield"></i> SOC Analyst</button>
+<button class="skill" onclick="showSkill('firewall')"><i class="fas fa-fire"></i> Firewalls</button>
+<button class="skill" onclick="showSkill('threatintel')"><i class="fas fa-brain"></i> Threat Intelligence</button>
   <button class="skill" onclick="showSkill('docker')"><i class="fab fa-docker"></i> Docker</button>
   <button class="skill" onclick="showSkill('k8s')"><i class="fas fa-network-wired"></i> Kubernetes</button>
   <button class="skill" onclick="showSkill('aws')"><i class="fab fa-aws"></i> AWS</button>
 </div>
 
     <div id="default-skill" class="skill-description active">
-      <h3>Select a Skill</h3>
+      <h3><i class="fas fa-hand-pointer"></i> Select a Skill</h3>
       <p>Click on any skill button above to see its details.</p>
     </div>
 
@@ -127,6 +137,46 @@
       <h3><i class="fas fa-code"></i> TypeScript</h3>
       <p>JavaScript with static typing for large projects.</p>
     </div>
+    <div id="pentest-skill" class="skill-description">
+  <h3><i class="fas fa-user-secret"></i> Penetration Testing</h3>
+  <p>Simulating cyberattacks to identify vulnerabilities in systems.</p>
+</div>
+<div id="ethicalhacking-skill" class="skill-description">
+  <h3><i class="fas fa-hat-wizard"></i> Ethical Hacking</h3>
+  <p>Using hacking skills legally to secure systems.</p>
+</div>
+<div id="networksec-skill" class="skill-description">
+  <h3><i class="fas fa-shield-alt"></i> Network Security</h3>
+  <p>Protecting networks from unauthorized access and threats.</p>
+</div>
+<div id="infosec-skill" class="skill-description">
+  <h3><i class="fas fa-lock"></i> Information Security</h3>
+  <p>Safeguarding information from unauthorized access or alteration.</p>
+</div>
+<div id="forensics-skill" class="skill-description">
+  <h3><i class="fas fa-search"></i> Digital Forensics</h3>
+  <p>Investigating cybercrime through digital evidence analysis.</p>
+</div>
+<div id="malware-skill" class="skill-description">
+  <h3><i class="fas fa-bug"></i> Malware Analysis</h3>
+  <p>Studying malware to understand behavior and origin.</p>
+</div>
+<div id="siem-skill" class="skill-description">
+  <h3><i class="fas fa-eye"></i> SIEM</h3>
+  <p>Security Information and Event Management systems for monitoring threats.</p>
+</div>
+<div id="soc-skill" class="skill-description">
+  <h3><i class="fas fa-building-shield"></i> SOC Analyst</h3>
+  <p>Security Operations Center professional monitoring real-time threats.</p>
+</div>
+<div id="firewall-skill" class="skill-description">
+  <h3><i class="fas fa-fire"></i> Firewalls</h3>
+  <p>Controlling incoming and outgoing network traffic based on rules.</p>
+</div>
+<div id="threatintel-skill" class="skill-description">
+  <h3><i class="fas fa-brain"></i> Threat Intelligence</h3>
+  <p>Collecting and analyzing threat data to prevent cyber attacks.</p>
+</div>
     <div id="tailwind-skill" class="skill-description">
       <h3><i class="fas fa-wind"></i> Tailwind CSS</h3>
       <p>Utility-first CSS framework for fast UI building.</p>
@@ -146,14 +196,14 @@
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2><i class="fas fa-building"></i> Projects</h2>
     <div class="projects-grid">
-      <article class="project-card"><h3>Portfolio Website</h3><p>My personal site showcasing my skills, projects, and contact info.</p></article>
-      <article class="project-card"><h3>Malware Simple</h3><p>Personal website malware for encrypting user databases (educational purpose).</p></article>
-      <article class="project-card"><h3>Project Tools DDoS</h3><p>My tools for sending DDoS packets to websites (for testing only).</p></article>
-      <article class="project-card"><h3>Baileys Library NodeJS</h3><p>WebSockets library for WhatsApp using NodeJS.</p></article>
-      <article class="project-card"><h3>Mini OS</h3><p>Mini operating system for tool use.</p></article>
-      <article class="project-card"><h3>Script Bot WhatsApp Xploit Zedezada</h3><p>Script attack for WhatsApp.</p></article>
+      <article class="project-card"><h3><i class="fas fa-network-wired"></i> Portfolio Website</h3><p>My personal site showcasing my skills, projects, and contact info.</p></article>
+      <article class="project-card"><h3><i class="fas fa-lock"></i> Malware Simple</h3><p>Personal website malware for encrypting user databases (educational purpose).</p></article>
+      <article class="project-card"><h3><i class="fas fa-hat-wizard"></i>  Projects Tools DDoS</h3><p>My tools for sending DDoS packets to websites (for testing only).</p></article>
+      <article class="project-card"><h3><i class="fab fa-node-js"></i> Bileys Library NodeJS</h3><p>WebSockets library for WhatsApp using NodeJS.</p></article>
+      <article class="project-card"><h3><i class="fas fa-eye"></i> Mini OS</h3><p>Mini operating system for tool use.</p></article>
+      <article class="project-card"><h3><i class="fas fa-bugs"></i> Script Bot WhatsApp Xploit Zedezada</h3><p>Script attack for WhatsApp.</p></article>
     </div>
   </section>
 
@@ -169,19 +219,25 @@
       <article class="friend-card"><div class="contact-icon"><i class="fab fa-telegram"></i></div><h3 class="contact-title">Telegram</h3><a href="https://t.me/conquerryy" class="contact-link">Say Good Day plss</a></div></article>
       
     <div class="friend-grid">
+      <article class="friend-card"><div class="contact-icon"><i class="fab fa-table"></i></div><h3 class="contact-title">My official certificate</h3><a href="https://www.credly.com/badges/ff515137-8ec7-4216-9173-95ec38f336c4/public_url" class="contact-link">Etichal Hacker</a></div></article>
+      
+    <div class="friend-grid">
+      <article class="friend-card"><div class="contact-icon"><i class="fab fa-table"></i></div><h3 class="contact-title">My official certificate</h3><a href="https://www.credly.com/badges/6ab88817-7be5-462d-8c1f-68fa023e731b/public_url" class="contact-link">Cyber Security</a></div></article>
+      
+    <div class="friend-grid">
       <article class="friend-card"><div class="contact-icon"><i class="fab fa-tiktok"></i></div><h3 class="contact-title">Tiktok</h3><a href="https://tiktok.com/@giilsftboyy_" class="contact-link">Follow plss</a></div></article>
   </section>
 
   <section id="friend">
-    <h2>THANKS TO FRIEND</h2>
+    <h2><i class="fas fa-users"></i>THANKS TO FRIEND</h2>
     <div class="friend-grid">
-      <article class="friend-card"><h3>Langit</h3><p>My broo</p></article>
-      <article class="friend-card"><h3>Daffa</h3><p>My broo</p></article>
-      <article class="friend-card"><h3>Renxiter</h3><p>My broo</p></article>
-      <article class="friend-card"><h3>Drayy</h3><p>My broo</p></article>
-      <article class="friend-card"><h3>Depay</h3><p>My broo</p></article>
-      <article class="friend-card"><h3>Kiuu</h3><p>My broo</p></article>
-      <article class="friend-card"><h3>Rapli</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Langit</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Daffa</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Renxiter</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Drayy</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Depay</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Kiuu</h3><p>My broo</p></article>
+      <article class="friend-card"><h3><i class="fas fa-users"></i> Rapli</h3><p>My broo</p></article>
     </div>
   </section>
 </div>
