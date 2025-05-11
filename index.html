@@ -8,11 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div id="loader">
   <div class="blob"></div>
   <div class="blob"></div>
   <div class="blob"></div>
-</div>
 <canvas id="particles"></canvas>
 
 <div class="container" role="main">
@@ -31,7 +29,7 @@
   </div>
 
   <div id="nowPlayingCard" style="display: none;">
-    <div class="cassette-spin"></div>
+<div class="casset spin"></div>
     <div class="song-info">
       <img id="songImage" src="https://ar-hosting.pages.dev/1746706133549.jpg" alt="Song Image">
       <div>
@@ -58,6 +56,7 @@
   </section>
 
   <section>
+                <div class="friend-card">
     <h2><i class="fas fa-file"></i> Skills</h2>
     <p style="text-align: center;">Click a skill to see the description:</p>
 <div class="skills">
@@ -196,6 +195,7 @@
   </section>
 
   <section id="projects">
+                <div class="friend-card">
     <h2><i class="fas fa-building"></i> Projects</h2>
     <div class="projects-grid">
       <article class="project-card"><h3><i class="fas fa-network-wired"></i> Portfolio Website</h3><p>My personal site showcasing my skills, projects, and contact info.</p></article>
@@ -207,7 +207,39 @@
     </div>
   </section>
 
+<section class="section produk-section">
+  <div class="friend-card">
+    <h2 class="section-title"><i class="fas fa-file"></i> Produk Script</h2>
+    <div class="produk-grid">
+      <!-- Produk 1 -->
+      <div class="friend-card produk-card">
+        <div class="overlay-eye" onclick="openModal('https://ar-hosting.pages.dev/1746706133549.jpg', 'МЕНЮ-TRASH V1 - Equipped with a modularization of the eschema script module which is different from the others and looks more modern and classy, and a script via tele which makes it flexible and strong with the presence of Force Close + Spam Button Params Json what are you waiting for, let's buy it now.')">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="https://ar-hosting.pages.dev/1746706133549.jpg" alt="МЕНЮ-TRASH V1" onclick="openModal('https://ar-hosting.pages.dev/1746706133549.jpg', 'МЕНЮ-TRASH V1 - Force Close + Spam Button Params Json.')">
+        <h3>МЕНЮ-TRASH V1</h3>
+        <p>Force Close + Spam Button Params Json.</p>
+        <p>price = 20K</p>
+        <a class="skill" href="https://wa.me/6288287577173">buy produk</a>
+      </div>
+
+      <!-- Produk 2 -->
+      <div class="friend-card produk-card">
+        <div class="overlay-eye" onclick="openModal('https://ar-hosting.pages.dev/1746706133549.jpg', 'МЕНЮ-TRASH V2 - Equipped with a modularization of the eschema script module which is different from the others and looks more modern and classy, but via WhatsApp which makes it not very flexible because on WhatsApp because in WhatsApp there is a spam detection system. but what makes it strong is because there is Spam Button Params Json + Delay Stc Buldoser which causes delays and wastes data packages. What are you waiting for, let's buy it')">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="https://ar-hosting.pages.dev/1746706133549.jpg" alt="МЕНЮ-TRASH V2" onclick="openModal('https://ar-hosting.pages.dev/1746706133549.jpg', ' МЕНЮ-TRASH V2 - Bug Spam Button Params Json + Delay Stc Buldoser.')">
+        <h3>МЕНЮ-TRASH V2</h3>
+        <p>Bug Spam Button Params Json + Delay Stc Buldoser.</p>
+        <p>price = 25k<p>
+        <a class="skill" href="https://wa.me/6288287577173">buy produk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   <section id="contact" class="contact">
+                <div class="friend-card">
       <h2 class="section-title"><i class="fas fa-phone"></i> My info</h2>
     <div class="friend-grid">
       <article class="friend-card"><div class="contact-icon"><i class="fab fa-github"></i></div><h3 class="contact-title">GitHub</h3><a href="Ryyyawh" class="contact-link">Visit My Github</a></div></article>
@@ -219,22 +251,132 @@
       <article class="friend-card"><div class="contact-icon"><i class="fab fa-telegram"></i></div><h3 class="contact-title">Telegram</h3><a href="https://t.me/conquerryy" class="contact-link">Say Good Day plss</a></div></article>
       
     <div class="friend-grid">
-      <article class="friend-card"><div class="contact-icon"><i class="fab fa-table"></i></div><h3 class="contact-title">My official certificate</h3><a href="https://www.credly.com/badges/ff515137-8ec7-4216-9173-95ec38f336c4/public_url" class="contact-link">Etichal Hacker</a></div></article>
-      
-    <div class="friend-grid">
-      <article class="friend-card"><div class="contact-icon"><i class="fab fa-table"></i></div><h3 class="contact-title">My official certificate</h3><a href="https://www.credly.com/badges/6ab88817-7be5-462d-8c1f-68fa023e731b/public_url" class="contact-link">Cyber Security</a></div></article>
-
-    <div class="friend-grid">
-      <article class="friend-card"><div class="contact-icon"><i class="fab fa-table"></i></div><h3 class="contact-title">My official certificate</h3><a href="https://www.credly.com/badges/a36e4fc3-dbef-4230-8896-e66514b62e8e/public_url" class="contact-link">Internet of Things</a></div></article>
-
-    <div class="friend-grid">
-      <article class="friend-card"><div class="contact-icon"><i class="fab fa-table"></i></div><h3 class="contact-title">My official certificate</h3><a href="https://www.credly.com/badges/44221c79-7cc1-422c-bcb6-1eacdde94f49/public_url" class="contact-link">Networking</a></div></article>
-
-    <div class="friend-grid">
       <article class="friend-card"><div class="contact-icon"><i class="fab fa-tiktok"></i></div><h3 class="contact-title">Tiktok</h3><a href="https://tiktok.com/@giilsftboyy_" class="contact-link">Follow plss</a></div></article>
   </section>
-  
+      
+      <section class="section produk-section">
+  <div class="friend-card">
+    <h2 class="section-title"><i class="fas fa-file"></i> official certificate from cisco</h2>
+    <div class="produk-grid">
+
+      <div class="friend-card produk-card">
+        <div class="overlay-eye" onclick="openModal('https://ar-hosting.pages.dev/1746960964117.jpg', 'Internet - Introduction to Internet of Things (IoT)
+Description:
+This certification provides an introductory overview of IoT technology, including how connected devices communicate and interact within smart environments.
+
+Skills Gained:
+
+Understanding of IoT architecture and ecosystems
+
+Knowledge of sensors, actuators, and embedded systems
+
+Familiarity with communication protocols (MQTT, CoAP, HTTP)
+
+Introduction to IoT platforms and cloud integration
+
+Awareness of privacy and security concerns in IoT
+
+Real-world IoT applications in smart homes, healthcare, and industry.')">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="https://ar-hosting.pages.dev/1746960964117.jpg" alt="Internet" onclick="openModal('https://ar-hosting.pages.dev/1746960964117.jpg', 'Internet - This certification provides an introductory overview of IoT technology, including how connected devices communicate and interact within smart environments.
+')">
+        <h3>Internet</h3>
+        <p>This certification provides an introductory overview of IoT technology, including how connected devices communicate and interact within smart environments.</p>
+        <a class="skill" href="https://www.credly.com/badges/a36e4fc3-dbef-4230-8896-e66514b62e8e/public_url">check authenticity</a>
+      </div>
+
+      <div class="friend-card produk-card">
+        <div class="overlay-eye" onclick="openModal('https://ar-hosting.pages.dev/1746960963215.jpg', 'Networking - Networking Basics
+Description:
+This certificate demonstrates fundamental knowledge of how computer networks operate, from data transmission to basic network design and troubleshooting.
+
+Skills Gained:
+
+Understanding of network topologies and types (LAN, WAN, PAN)
+
+IP addressing and subnetting
+
+OSI and TCP/IP models
+
+Basic routing and switching concepts
+
+Network troubleshooting techniques
+
+Configuration of basic networking hardware (routers, switches)
+
+Familiarity with protocols such as HTTP, DNS, DHCP, and FTP')">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="https://ar-hosting.pages.dev/1746960963215.jpg" alt="Networking" onclick="openModal('https://ar-hosting.pages.dev/1746960963215.jpg', 'Networking - This certificate demonstrates fundamental knowledge of how computer networks operate, from data transmission to basic network design and troubleshooting.')">
+        <h3>Networking</h3>
+        <p>This certificate demonstrates fundamental knowledge of how computer networks operate, from data transmission to basic network design and troubleshooting.</p>
+        <a class="skill" href="https://www.credly.com/badges/44221c79-7cc1-422c-bcb6-1eacdde94f49/public_url" class="contact-link">check authenticity</a>
+      </div>
+
+      <div class="friend-card produk-card">
+        <div class="overlay-eye" onclick="openModal('https://ar-hosting.pages.dev/1746960965141.jpg', 'Ethical Hacker - Ethical Hacker (CEH)
+Description:
+The CEH certification validates the holder’s expertise in ethical hacking methodologies used to assess the security posture of systems. It is recognized globally as a benchmark for professionals in cybersecurity and penetration testing.
+
+Skills Gained:
+
+Vulnerability assessment and penetration testing
+
+Footprinting and reconnaissance
+
+Network scanning and enumeration
+
+Exploitation techniques (e.g., buffer overflows, malware, SQL injection)
+
+Social engineering tactics
+
+System hacking and privilege escalation
+
+Web application, wireless, and mobile hacking
+
+Countermeasures and defense strategies
+.')">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="https://ar-hosting.pages.dev/1746960965141.jpg" alt="Internet of Things" onclick="openModal('https://ar-hosting.pages.dev/1746960965141.jpg', ' Etichal Hacker - The CEH certification validates the holder’s expertise in ethical hacking methodologies used to assess the security posture of systems. It is recognized globally as a benchmark for professionals in cybersecurity and penetration testing.')">
+        <h3>Ethichal Hacker</h3>
+        <p>The CEH certification validates the holder’s expertise in ethical hacking methodologies used to assess the security posture of systems. It is recognized globally as a benchmark for professionals in cybersecurity and penetration testing.</p>
+        <a class="skill" href="https://www.credly.com/badges/ff515137-8ec7-4216-9173-95ec38f336c4/public_url" class="contact-link">check authenticity</a>
+      </div>
+
+      <div class="friend-card produk-card">
+        <div class="overlay-eye" onclick="openModal('https://ar-hosting.pages.dev/1746960962410.jpg', 'Cyber Security - Introduction to Cyber Security
+Description:
+This certificate provides a foundational understanding of the key principles and practices in cybersecurity, preparing individuals to recognize threats and apply basic protective measures.
+
+Skills Gained:
+
+Understanding of common cyber threats and attacks (phishing, malware, ransomware)
+
+Knowledge of CIA triad (Confidentiality, Integrity, Availability)
+
+Awareness of data privacy and security best practices
+
+Risk management and threat identification
+
+Introduction to cybersecurity policies and frameworks
+
+Safe internet and email usage practices')">
+          <i class="fas fa-eye"></i>
+        </div>
+        <img src="https://ar-hosting.pages.dev/1746960962410.jpg" alt="Cyber Security" onclick="openModal('https://ar-hosting.pages.dev/1746960962410.jpg', 'Cyber Security - This certificate provides a foundational understanding of the key principles and practices in cybersecurity, preparing individuals to recognize threats and apply basic protective measures..')">
+        <h3>Cyber Security</h3>
+        <p>This certificate provides a foundational understanding of the key principles and practices in cybersecurity, preparing individuals to recognize threats and apply basic protective measures.</p>
+        <a class="skill" href="https://www.credly.com/badges/6ab88817-7be5-462d-8c1f-68fa023e731b/public_url" class="contact-link">check authenticity</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
   <section id="friend">
+                <div class="friend-card">
     <h2><i class="fas fa-users"></i>THANKS TO FRIEND</h2>
     <div class="friend-grid">
       <article class="friend-card"><h3><i class="fas fa-users"></i> Langit</h3><p>My broo</p></article>
@@ -244,7 +386,6 @@
       <article class="friend-card"><h3><i class="fas fa-users"></i> Depay</h3><p>My broo</p></article>
       <article class="friend-card"><h3><i class="fas fa-users"></i> Kiuu</h3><p>My broo</p></article>
       <article class="friend-card"><h3><i class="fas fa-users"></i> Rapli</h3><p>My broo</p></article>
-    <article class="friend-card"><h3><i class="fas fa-users"></i> RaldzzXyz</h3><p>My broo</p></article>
     </div>
   </section>
 </div>

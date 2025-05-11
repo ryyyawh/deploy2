@@ -229,18 +229,6 @@ body.light-mode .skill-description.active {
     font-weight: 600;
     transition: background 0.3s;
   }
-  #loader {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: #121212;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
 
 .blob {
   width: 30px;
@@ -248,6 +236,195 @@ body.light-mode .skill-description.active {
   background: #00adb5;
   border-radius: 50%;
   animation: blob-bounce 1.5s infinite ease-in-out alternate;
+}
+/* Section Produk */
+.produk-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.produk-section h2 {
+  font-size: 24px;
+  color: #00adb5;
+  text-shadow: 0 0 10px #00adb5;
+  margin-bottom: 25px;
+}
+
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Kartu Produk */
+.friend-card.produk-card {
+  position: relative;
+  background-color: #1a1a1a;
+  border: 1px solid #00adb5;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 8px #00adb5aa;
+  animation: ombangAmbing 4s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.friend-card.produk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00adb5ff;
+}
+
+.friend-card.produk-card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.friend-card.produk-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.friend-card.produk-card p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.friend-card.produk-card .skill {
+  background-color: #00adb5;
+  color: #121212;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.friend-card.produk-card .skill:hover {
+  background-color: #00888f;
+}
+
+/* Overlay icon mata */
+.overlay-eye {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: #fff;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 80%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 60vh;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #00adb5;
+}
+
+.modal-content h3 {
+  color: #00adb5;
+  margin-bottom: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Animasi */
+@keyframes ombangAmbing {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Produk Card - Light Mode */
+body.light-mode .friend-card.produk-card {
+  background-color: #ffffff;
+  border: 1px solid #007b83;
+  box-shadow: 0 0 8px #007b83aa;
+}
+
+body.light-mode .friend-card.produk-card h3 {
+  color: #121212;
+}
+
+body.light-mode .friend-card.produk-card p {
+  color: #444;
+}
+
+body.light-mode .friend-card.produk-card .skill {
+  background-color: #007b83;
+  color: #fff;
+}
+
+body.light-mode .friend-card.produk-card .skill:hover {
+  background-color: #005f63;
+}
+
+/* Modal - Light Mode */
+body.light-mode .modal {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+body.light-mode .modal-content {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+body.light-mode .modal-content h3 {
+  color: #007b83;
+}
+
+body.light-mode .modal-content img {
+  box-shadow: 0 0 12px #007b83;
+}
+
+body.light-mode .close {
+  color: #222;
 }
 
 .blob:nth-child(2) {

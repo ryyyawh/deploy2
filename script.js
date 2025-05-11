@@ -10,6 +10,71 @@ function showSkill(skillId) {
   }
 }
 
+function openModal(imageSrc, captionText) {
+  let modal = document.getElementById("myModal");
+
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "myModal";
+    modal.className = "modal";
+    modal.innerHTML = `
+      <div class="friend-card">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="modalCaption"></div>
+    `;
+    document.body.appendChild(modal);
+
+    // CSS modal langsung ditambahin dari JS biar ga ribet
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+      }
+      .modal-content {
+        display: block;
+        margin: 60px auto;
+        max-width: 80%;
+        border-radius: 10px;
+      }
+      #modalCaption {
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 18px;
+      }
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .close:hover {
+        color: #ccc;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  modal.style.display = "block";
+  document.getElementById("modalImage").src = imageSrc;
+  document.getElementById("modalCaption").textContent = captionText;
+}
+
+function closeModal() {
+  const modal = document.getElementById("myModal");
+  if (modal) modal.style.display = "none";
+}
+
 const themeBtn = document.getElementById('themeToggle');
 const particlesBtn = document.getElementById('particlesToggle');
 const musicBtn1 = document.getElementById('mussicToggle');
@@ -154,12 +219,4 @@ animateParticles();
 particlesBtn.addEventListener('click', () => {
   particlesEnabled = !particlesEnabled;
   particlesBtn.textContent = particlesEnabled ? '✦' : '✖';
-});
-
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  loader.style.opacity = '0';
-  setTimeout(() => {
-    loader.style.display = 'none';
-  }, 500);
 });
